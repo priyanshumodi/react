@@ -1,3 +1,7 @@
+# for create project
+`
+npm create vite@latest
+`
 # command to install node modules
 
 `
