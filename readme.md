@@ -24,3 +24,13 @@ const NewReactElement = React.createElement(
   user
 )
 ```
+
+# jsx
+
+1:- every tag should have closing even img tag also jsx is not regular html
+
+2:- others:- make folder according to technology, le jsx:- make folder according to component
+
+# props
+
+props is used to code reuse
