@@ -11,11 +11,10 @@ npm install --save-dev vite
 # command to install tailwind in vite
 `
 npm install -D tailwindcss postcss autoprefixer
-`
-
-`
 npx tailwindcss init -p
 `
+
+
 
 # evaluated expression
 ## {username} this is evaluated expression
