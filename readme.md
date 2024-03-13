@@ -43,3 +43,5 @@ const NewReactElement = React.createElement(
 # props
 
 props is used to code reuse
+
+# onClick function english channel se padhna
