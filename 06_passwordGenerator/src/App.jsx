@@ -47,9 +47,27 @@ function App() {
             max={100}
             value={length}
             className='cursor-pointer'
-            onChange={(e)=>setLength(e.target.value)}
+            onChange={(e) => setLength(e.target.value)}
             />
             <label htmlFor="">Length: {length}</label>
+          </div>
+          <div>
+            <input 
+            type="checkbox" 
+            defaultChecked = {numAllowed}
+            id='numInput'
+            onChange={() => setNumAllowed((prev) => !prev)}
+            />
+            <label htmlFor="numInput">Numbers</label>
+          </div>
+          <div>
+            <input 
+            type="checkbox" 
+            defaultChecked = {charAllowed}
+            id='charInput'
+            onChange={() => setCharAllowed((prev) => !prev)}
+            />
+            <label htmlFor="charInput">Characters</label>
           </div>
         </div>
       </div>
