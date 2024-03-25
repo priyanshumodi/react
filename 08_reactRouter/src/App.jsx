@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <Header/>
+    <h1>jai ho</h1>
     </>
   )
 }
