@@ -1,12 +1,16 @@
-import UserContextProvider from "./context/UserContextProvider"
+import './App.css'
+import Login from './components/Login'
+import Profile from './components/Profile'
+import UserContextProvider from './context/UserContextProvider'
 
 
 function App() {
 
   return (
     <UserContextProvider>
-      <div>Jai shree krishna</div>
-      
+      <h1>jai shree krishna</h1>
+      <Login/>
+      <Profile/>
     </UserContextProvider>
   )
 }

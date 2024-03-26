@@ -1,4 +1,4 @@
-import React,{useState,useContext} from "react";
+import React, {useState, useContext} from "react";
 import UserContext from "../context/UserContext";
 
 function Login() {
@@ -17,15 +17,15 @@ function Login() {
             <h2>Login</h2>
             <input type="text" 
             value={username}
-            onChange={(e)=>setUsername(e.targer.value)}
+            onChange={(e)=>setUsername(e.target.value)}
             placeholder="usename"/>
             <input type="text" 
             value={password}
-            onChange={(e)=>setPassword(e.targer.value)}
+            onChange={(e)=>setPassword(e.target.value)}
             placeholder="password"/>
             <button onClick={handleSubmit}>Submit</button>
         </div>
     )
 }
 
-export default Login;
+export default Login
