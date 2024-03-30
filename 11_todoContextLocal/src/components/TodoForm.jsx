@@ -11,7 +11,7 @@ function TodoForm() {
         if(!todo) return;
 
         // todo:todo both name same so new syntax is todo only  
-        addTodo({todo,completed:"false"});
+        addTodo({todo, completed: false});
 
         setTodo("");
     }
