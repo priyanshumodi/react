@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import AddTodo from './components/AddTodo'
 import Todos from './components/Todos'
+import EditTodo from './components/EditTodo'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,6 +12,7 @@ function App() {
   return (
     <>
       <AddTodo/>
+      <EditTodo/>
       <Todos/>
     </>
   )

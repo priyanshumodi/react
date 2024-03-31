@@ -1,10 +1,12 @@
 import React from "react";
 import { useDispatch,useSelector } from "react-redux";
-import { removeTodo } from "../features/todo/todoSlice";
+import { removeTodo, updateDetail, updateEdit } from "../features/todo/todoSlice";
+import { FaRegEdit, FaUndo} from "react-icons/fa";
 
 function Todos() {
     const todos = useSelector(state => state.todos)
     const dispatch = useDispatch()
+    const edit = useSelector(state => state.edit)
 
     return (
         <>
@@ -16,6 +18,16 @@ function Todos() {
                 key={todo.id}
               >
                 <div className='text-white'>{todo.text}</div>
+                <div className="flex space-x-4">
+                <button
+                 onClick={() => {
+                  dispatch(updateEdit())
+                  dispatch(updateDetail({id:todo.id,text:todo.text}))
+                 }}
+                  className="text-2xl text-white bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded text-md"
+                >
+                  {edit?<FaUndo/>:<FaRegEdit />}
+                </button>
                 <button
                  onClick={() => dispatch(removeTodo(todo.id))}
                   className="text-white bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded text-md"
@@ -35,6 +47,7 @@ function Todos() {
                     />
                   </svg>
                 </button>
+                </div>
               </li>
             ))}
           </ul>
