@@ -1,19 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {useDispatch,useSelector} from 'react-redux'
-import {addTodo} from '../features/todo/todoSlice'
+import {updateTodo,updateEdit} from '../features/todo/todoSlice'
 function EditTodo() {
     const [input,setInput] = useState('');
     const dispatch = useDispatch();
 
     const addTodoHandler = (e) => {
         e.preventDefault()
-        dispatch(addTodo(input))
+        dispatch(updateTodo({id:id,text:input}))
+        dispatch(updateEdit())
         setInput('')
+
     }
 
     const id = useSelector(state => state.id)
     const text = useSelector(state => state.text)
     const editAvailable = useSelector(state => state.edit)
+
+    useEffect(()=>{
+      setInput(text)
+    },[text])
 
     return (
         <form onSubmit={addTodoHandler} className={`space-x-3 mt-12 ${editAvailable?"":"hidden"}`}>
@@ -21,7 +27,7 @@ function EditTodo() {
             type="text"
             className="bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             placeholder="Edit your Todo..."
-            value={text}
+            value={input}
             onChange={(e) => setInput(e.target.value)}
           />
           <button

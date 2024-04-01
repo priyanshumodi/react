@@ -13,7 +13,7 @@ export const todoSlice = createSlice({
     reducers: {
         addTodo: (state,action) => {
             const todo = {
-                id: nanoid,
+                id: nanoid(),
                 text: action.payload
             }
             state.todos.push(todo)
@@ -26,6 +26,7 @@ export const todoSlice = createSlice({
                 id:action.payload.id,
                 text:action.payload.text
             }
+            // console.log(action.payload.id+" jai go "+action.payload.text)
             state.todos = state.todos.map((prev) => (prev.id === action.payload.id ? todo : prev))
         },
         updateEdit: (state) => {
