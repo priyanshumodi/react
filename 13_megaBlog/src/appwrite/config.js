@@ -8,7 +8,7 @@ export class Service {
     
     constructor() {
         this.client
-            .setEndPoint(conf.appwriteUrl)
+            .setEndpoint(conf.appwriteUrl)
             .setProject(conf.appwriteProjectId);
 
         this.databases = Databases(this.client);
@@ -127,3 +127,6 @@ export class Service {
         )
     }
 }
+
+const service = new Service();
+export default service
